@@ -11,6 +11,7 @@ class Meal {
   final String? source;
   final String? imageSource;
   final String? modifiedAt;
+ 
 
   const Meal({
     required this.idMeal,
@@ -25,7 +26,9 @@ class Meal {
     this.source,
     this.imageSource,
     this.modifiedAt,
+    
   });
+
   factory Meal.fromJson(Map<String, dynamic> json) {
     return Meal(
       idMeal: json["idMeal"],
@@ -40,6 +43,8 @@ class Meal {
       source: json["strSource"],
       imageSource: json["strImageSource"],
       modifiedAt: json["dateModified"],
+     
     );
   }
+
 }

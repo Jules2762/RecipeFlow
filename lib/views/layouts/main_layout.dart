@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/views/pages/favorites/favorites_page.dart';
 import 'package:test_flutter/views/pages/home/home_page.dart';
 import 'package:test_flutter/views/widgets/logo.dart';
 import 'package:test_flutter/views/widgets/notification_screen.dart';
@@ -12,7 +13,7 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   int _currentIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  final List<Widget> _pages = [HomePage(), HomePage(), HomePage()];
+  final List<Widget> _pages = [HomePage(), HomePage(), HomePage(),FavoritesPage()];
   // @override
   // void initState() {
   //   super.initState();
