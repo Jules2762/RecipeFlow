@@ -31,46 +31,21 @@ class AppTheme {
           fontSize: 36,
           color: primaryLight,
         ),
-         headlineMedium: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 32
-        ),
-        headlineSmall: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 28
-        ),
+        headlineMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+        headlineSmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
 
-        titleLarge: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w700
-        ),
-        titleMedium: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600
-        ),
-        titleSmall: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500
-        ),
-        bodyLarge: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 14
-        ),
-        bodyMedium: TextStyle(
-           fontWeight: FontWeight.w400,
-          fontSize: 12
-        ),
-        bodySmall: TextStyle(
-           fontWeight: FontWeight.w300,
-          fontSize: 11
-        )
+        titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+        titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        titleSmall: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        bodyLarge: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+        bodyMedium: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+        bodySmall: TextStyle(fontWeight: FontWeight.w300, fontSize: 11),
       ),
       badgeTheme: BadgeThemeData(backgroundColor: secondaryLight),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: primaryLight,
-        unselectedItemColor: scaffoldDark
+        unselectedItemColor: scaffoldDark,
       ),
-      
     );
   }
 

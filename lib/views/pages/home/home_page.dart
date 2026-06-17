@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:test_flutter/cores/providers/data_providers/category_data_provider.dart';
 import 'package:test_flutter/views/pages/home/widgets/featured_today.dart';
+import 'package:test_flutter/views/pages/home/widgets/trending_now.dart';
 import 'package:test_flutter/views/widgets/page_container.dart';
 import 'package:test_flutter/cores/providers/category_provider.dart';
 
@@ -49,6 +50,7 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: ((context, index) {
                       final item = data[index];
                       final isSelected = item.name == selectedActualCategory;
+
                       return TextButton(
                         style: ButtonStyle(
                           backgroundColor: WidgetStatePropertyAll(
@@ -73,7 +75,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              loading: () => Center(child: LoadingAnimationWidget.stretchedDots(color: Theme.of(context).colorScheme.primary, size: 30)),
+              loading: () => Center(
+                child: LoadingAnimationWidget.stretchedDots(
+                  color: Theme.of(context).colorScheme.primary,
+                  size: 30,
+                ),
+              ),
               error: (error, _) => Center(child: Text(error.toString())),
             );
           }),
@@ -103,16 +110,29 @@ class _HomePageState extends State<HomePage> {
                         child: Card(
                           clipBehavior: Clip.antiAlias,
                           child: Stack(
-                              children: [
-                                Positioned.fill(child: Image.network(category.thumbnail,fit: BoxFit.contain,)),
-                                // Positioned.fill(child: Container(
-                                //   decoration: BoxDecoration(
-                                //     color: Colors.black38
-                                //   ),
-                                // )),
-                                Positioned(bottom:0,left: 0,right: 0,child: Text(category.name,textAlign: TextAlign.center,style: Theme.of(context).textTheme.titleSmall,))
-                              ],
-                            
+                            children: [
+                              Positioned.fill(
+                                child: Image.network(
+                                  category.thumbnail,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              // Positioned.fill(child: Container(
+                              //   decoration: BoxDecoration(
+                              //     color: Colors.black38
+                              //   ),
+                              // )),
+                              Positioned(
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                child: Text(
+                                  category.name,
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );
@@ -120,19 +140,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              loading: () =>  Center(child: LoadingAnimationWidget.stretchedDots(color: Theme.of(context).colorScheme.primary, size: 30)),
+              loading: () => Center(
+                child: LoadingAnimationWidget.stretchedDots(
+                  color: Theme.of(context).colorScheme.primary,
+                  size: 30,
+                ),
+              ),
 
               error: (error, _) => Center(child: Text(error.toString())),
             );
           },
         ),
-        const SizedBox(
-          height: 20,
-        ),
-          Text(
-          "Popular categories",
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        const SizedBox(height: 20),
+        TrendingNow()
       ],
     );
   }
